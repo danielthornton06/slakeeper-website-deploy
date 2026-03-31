@@ -1,0 +1,17 @@
+[build]
+  publish = "."
+  command = ""
+
+[context.production]
+  environment = { NODE_ENV = "production" }
+
+[context.preview]
+  environment = { NODE_ENV = "preview" }
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
