@@ -1156,6 +1156,81 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════════════════════════════════════════ */
+    .contact__intro {
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+
+    .contact__sub {
+      font-size: 17px;
+      color: var(--ink-mute);
+      margin-top: 12px;
+    }
+
+    .contact__cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 760px;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .contact-card:hover {
+      border-color: var(--teal-200);
+      box-shadow: 0 8px 32px rgba(29, 158, 117, 0.1);
+    }
+
+    .contact-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--teal-50);
+      border: 1px solid var(--teal-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-card__title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .contact-card__body {
+      font-size: 14px;
+      color: var(--ink-mute);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .contact-card__link {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--teal-400);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .contact-card__link:hover {
+      color: var(--teal-600);
+      border-bottom-color: var(--teal-400);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
        FINAL CTA
     ═══════════════════════════════════════════════════════════════════════════ */
     .final-cta {
@@ -1375,6 +1450,11 @@
         margin: 0 auto;
       }
 
+      .contact__cards {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+      }
+
       .proof-bar__inner {
         flex-direction: column;
         align-items: flex-start;
@@ -1429,6 +1509,7 @@
         <li><a href="#how-it-works" class="nav__link">How it Works</a></li>
         <li><a href="#platforms" class="nav__link">Platforms</a></li>
         <li><a href="#pricing" class="nav__link">Pricing</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
       </ul>
 
       <a href="#" class="btn btn--primary nav__cta">Install Free</a>
@@ -2077,6 +2158,44 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="section section--light" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact__intro animate-fade-up">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-heading section-heading--lg" id="contact-heading">We're here to help.</h2>
+        <p class="contact__sub">Whether you have a question about the product, need help getting set up, or want to talk about enterprise pricing — reach out.</p>
+      </div>
+      <div class="contact__cards">
+        <div class="contact-card animate-fade-up animate-fade-up--delay-1">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M21 7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2l9 5.5L21 7z" stroke="#1D9E75" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="contact-card__title">General enquiries</h3>
+          <p class="contact-card__body">Questions about SLA Keeper, partnerships, press, or anything else.</p>
+          <a href="mailto:hello@slakeeper.com" class="contact-card__link">hello@slakeeper.com</a>
+        </div>
+        <div class="contact-card animate-fade-up animate-fade-up--delay-2">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="9" stroke="#1D9E75" stroke-width="1.5"/>
+              <path d="M12 8v4l2.5 2.5" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="17.5" r="0.75" fill="#1D9E75"/>
+            </svg>
+          </div>
+          <h3 class="contact-card__title">Technical support</h3>
+          <p class="contact-card__body">Extension issues, dashboard help, billing questions, or account management.</p>
+          <a href="mailto:support@slakeeper.com" class="contact-card__link">support@slakeeper.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
        FOOTER
   ═══════════════════════════════════════════════════════════════════════════ -->
   <footer class="footer" aria-label="Site footer">
@@ -2098,6 +2217,7 @@
         <a href="#how-it-works" class="footer__link">How it Works</a>
         <a href="#platforms" class="footer__link">Platforms</a>
         <a href="#pricing" class="footer__link">Pricing</a>
+        <a href="#contact" class="footer__link">Contact</a>
         <a href="#" class="footer__link">Privacy</a>
         <a href="#" class="footer__link">Terms</a>
       </nav>
