@@ -1,6 +1,6 @@
-    'use strict';
+'use strict';
 
-    // ── Scroll animations ────────────────────────────────────────────────────
+// ── Scroll animations ────────────────────────────────────────────────────
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -227,4 +227,4 @@
         teamPriceEl.textContent = formatPrice(BASE_TEAM_PRICE, currency);
       }
     });
-  </script>
+
