@@ -15,6 +15,10 @@ jobs:
           fetch-depth: 0
 
       - name: Push mirror to personal GitHub
+        env:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
         run: |
-          git remote add personal https://x-access-token:${{ secrets.PERSONAL_GITHUB_TOKEN }}@github.com/danielthornton06/slakeeper-website-deploy.git
+          git config --global credential.helper store
+          echo "https://x-access-token:${PERSONAL_TOKEN}@github.com" > ~/.git-credentials
+          git remote add personal https://github.com/danielthornton06/slakeeper-website-deploy.git
           git push personal --mirror
