@@ -1,0 +1,20 @@
+name: Mirror to Personal GitHub
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push mirror to personal GitHub
+        run: |
+          git remote add personal https://x-access-token:${{ secrets.PERSONAL_GITHUB_TOKEN }}@github.com/danielthornton06/slakeeper-website.git
+          git push personal --mirror
